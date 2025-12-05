@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureEssence Herbal Oils | Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #4caf50;
+            --pale-green: #e8f5e9;
+            --dark-green: #1b5e20;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--pale-green) 0%, #ffffff 100%);
+        }
+
+        .login-container {
+            display: flex;
+            width: 900px;
+            height: 550px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .login-left {
+            flex: 1;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand {
+            margin-bottom: 30px;
+        }
+
+        .brand h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .brand span {
+            color: var(--pale-green);
+        }
+
+        .brand p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .feature i {
+            font-size: 1.2rem;
+            color: var(--pale-green);
+        }
+
+        .login-right {
+            flex: 1;
+            background: var(--white);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-form {
+            width: 100%;
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-green);
+        }
+
+        .form-subtitle {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .forgot-password {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: var(--dark-green);
+        }
+
+        .demo-credentials {
+            margin-top: 25px;
+            padding: 15px;
+            background: var(--pale-green);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .demo-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-green);
+        }
+
+        .demo-info {
+            color: var(--text-dark);
+        }
+
+        .error-message {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+                width: 95%;
+                height: auto;
+            }
+
+            .login-left, .login-right {
+                padding: 30px;
+            }
+        }
+        /* Message type colors */
+
+.alert-success {
+
+  background-color: #28a745; /* Green */
+
+}
+
+
+
+.alert-error {
+
+  background-color: #dc3545; /* Red */
+
+}
+
+
+
+.alert-warning {
+
+  background-color: #ffc107; /* Yellow */
+
+  color: #000;
+
+}
+
+
+
+.alert-info {
+
+  background-color: #17a2b8; /* Blue */
+
+}
+
+
+
+/* Optional margin top */
+
+.mt-2 {
+
+  margin-top: 8px;
+
+}
+
+
+
+/* Smooth fade-in animation */
+
+@keyframes fadeIn {
+
+  from { opacity: 0; transform: translateY(-5px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+
+        .home-btn {
+            background-color: transparent;
+            color: var(--primary-green);
+            border: 1px solid var(--primary-green);
+            padding: 11px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .home-btn:hover {
+            background-color: var(--light-green);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Panel -->
+        <div class="login-left">
+            <div class="brand">
+                <h1><i class="fas fa-leaf"></i> Pure<span>Essence</span></h1>
+                <p>Nature's purity in every drop</p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-seedling"></i>
+                    <div>
+                        <h3>100% Natural</h3>
+                        <p>Pure herbal extracts with no additives</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <h3>Premium Quality</h3>
+                        <p>Certified organic and sustainably sourced</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <i class="fas fa-shipping-fast"></i>
+                    <div>
+                        <h3>Fast Delivery</h3>
+                        <p>Free shipping on orders over $50</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Right Panel -->
+        <div class="login-right">
+            {% if messages %}
+
+             {% for message in messages %}
+
+               <div class="alert alert-{{ message.tags }} mt-2" role="alert">
+
+                 {{ message }}
+
+               </div>
+
+             {% endfor %}
+
+           {% endif %}
+            <form class="login-form" id="loginForm" method="POST" action="{% url 'new_login' %}">
+
+            {% csrf_token %}
+                <a href="/" class="home-btn">Home</a>
+                <h2 class="form-title">Welcome Back</h2>
+                <p class="form-subtitle">Sign in to your account</p>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                </div>
+
+                <div class="remember-forgot">
+                    <div class="remember">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn">Sign In</button>
+
+
+                <div class="error-message" id="errorMessage">
+                    Invalid username or password. Please try again.
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+{#    <script>#}
+{#        document.getElementById('loginForm').addEventListener('submit', function(event) {#}
+{#            event.preventDefault();#}
+{##}
+{#            // Get form values#}
+{#            const username = document.getElementById('username').value;#}
+{#            const password = document.getElementById('password').value;#}
+{#            const errorMessage = document.getElementById('errorMessage');#}
+{##}
+{#            // Check credentials#}
+{#            if (username === 'admin' && password === '123') {#}
+{#                // Successful login - redirect to dashboard#}
+{#                // In a real application, you would send this data to a server#}
+{#                // For this demo, we'll redirect to the dashboard page#}
+{##}
+{#                // Create a form to submit data via POST#}
+{#                const form = document.createElement('form');#}
+{#                form.method = 'POST';#}
+{#                form.action = 'cust_dashboard'; // This would be your dashboard URL#}
+{##}
+{#                // Add username as a hidden field#}
+{#                const usernameField = document.createElement('input');#}
+{#                usernameField.type = 'hidden';#}
+{#                usernameField.name = 'username';#}
+{#                usernameField.value = username;#}
+{#                form.appendChild(usernameField);#}
+{##}
+{#                // Add password as a hidden field (in a real app, you wouldn't do this)#}
+{#                const passwordField = document.createElement('input');#}
+{#                passwordField.type = 'hidden';#}
+{#                passwordField.name = 'password';#}
+{#                passwordField.value = password;#}
+{#                form.appendChild(passwordField);#}
+{##}
+{#                // Add the form to the body and submit it#}
+{#                document.body.appendChild(form);#}
+{#                form.submit();#}
+{#            } else {#}
+{#                // Show error message#}
+{#                errorMessage.style.display = 'block';#}
+{##}
+{#                // Clear password field#}
+{#                document.getElementById('password').value = '';#}
+{##}
+{#                // Hide error message after 3 seconds#}
+{#                setTimeout(function() {#}
+{#                    errorMessage.style.display = 'none';#}
+{#                }, 3000);#}
+{#            }#}
+{#        });#}
+{#    </script>#}
+</body>
+</html>

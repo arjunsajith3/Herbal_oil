@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureEssence Herbal Oils - Product Booking</title>
+    <link rel="stylesheet" href="{% static 'CSS/book.css' %}">
+<style>
+    .form-container {
+    background-color: white; /* Changed to light shade */
+}
+</style>
+</head>
+<body>
+<div class="form-container">
+    <div class="brand-header">
+        <div class="brand-logo">PureEssence Herbal Oils</div>
+        <div class="brand-tagline">Nature's Healing Power in Every Drop</div>
+    </div>
+
+    <h2>Book Your Product</h2>
+    {% if messages %}
+
+             {% for message in messages %}
+
+               <div class="alert alert-{{ message.tags }} mt-2" role="alert">
+
+                 {{ message }}
+
+               </div>
+
+             {% endfor %}
+
+           {% endif %}
+     <form action="{% url 'book' %}" method="post">
+        {% csrf_token %}
+    <div class="success-message" id="successMessage">
+        Thank you for Signing Up! Please Click on Login.
+    </div>
+
+    <form id="bookingForm">
+        <div class="form-group">
+            <label for="name">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <div class="error-message" id="nameError">Please enter your full name</div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <div class="error-message" id="nameError">Please enter your full name</div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error-message" id="emailError">Please enter a valid email address</div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+        </div>
+         <div class="form-group">
+                <label class="form-label required" for="age">Age</label>
+                <input type="number"
+                       id="age"
+                       name="age"
+                       class="form-input"
+                       placeholder="Enter your age"
+                       min="1"
+                       max="120"
+                       required>
+                <div class="helper-text">(Please enter your age in years)</div>
+                <div class="error-message" id="age-error">Please enter a valid age between 1 and 120</div>
+
+        <div class="form-group">
+                <label class="form-label" for="register-gender">Gender</label>
+                <select class="form-select" id="register-gender" name="gender">
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+                <div class="helper-text">*This information helps us personalize your experience</div>
+            </div>
+
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <div class="error-message" id="usernameError">Please enter a username</div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" class="password-toggle" id="togglePassword">👁️</button>
+            <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+        </div>
+
+        <div class="form-footer">
+            <button type="submit" class="submit-btn">Book Now</button>
+            <a href="/" class="home-btn">Home</a>
+        </div>
+    </form>
+
+    <div class="login-link">
+        Already have an account? <a href="{% url 'new_login' %}">Login here</a>
+    </div>
+</div>
+<script src="{% static 'JS/book.js' %}"> </script>
+
+</body>
+</html>

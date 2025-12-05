@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | PureEssence Herbal Oils</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'CSS/about.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf logo-icon"></i>
+                    <span class="logo-text">PureEssence Herbal Oils</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#" class="active">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="cta-button">Shop Now</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Rooted in Nature, Bottled for Wellness</h1>
+            <p>Discover the pure essence of nature's healing power with our carefully crafted herbal oils</p>
+            <button class="cta-button">Learn Our Story</button>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+            </div>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>PureEssence Herbal Oils began as a small family project in the lush hills of Oregon. Our founder, Elena Green, grew up learning about the healing properties of plants from her grandmother, a skilled herbalist with generations of knowledge.</p>
+                    <p>Frustrated by the synthetic ingredients and questionable sourcing in mainstream wellness products, Elena decided to create something different—a line of herbal oils that honored both nature's wisdom and modern purity standards.</p>
+                    <p>What started as a small kitchen operation has grown into a company with global reach, but our core values remain unchanged. We still hand-select our herbs, use traditional extraction methods, and maintain personal relationships with our farming partners.</p>
+                    <p>Today, we're proud to bring the healing power of plants to thousands of households while maintaining our commitment to sustainability, purity, and community.</p>
+                </div>
+                <div class="story-image">
+                    <img src="{% static 'image/aboutimage.png'%}" alt="Pure Essence">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Values</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Purity & Potency</h3>
+                    <p>We use only 100% pure, undiluted herbal oils with no synthetic additives. Each batch is tested to ensure maximum therapeutic benefits.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Sustainable Sourcing</h3>
+                    <p>Our herbs are ethically wild-harvested or grown on organic partner farms that practice regenerative agriculture.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Community Focus</h3>
+                    <p>We support local communities through fair trade practices and educational initiatives about herbal wellness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{% static 'image/Gemini_Generated_Image_5rptqs5rptqs5rpt.png'%}"  alt="Elena Green">
+                    </div>
+                    <h3>Elena Green</h3>
+                    <div class="role">Founder & Head Herbalist</div>
+                    <p>With over 20 years of experience in herbal medicine, Elena leads our product development with passion and expertise.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marcus Chen">
+                    </div>
+                    <h3>Marcus Chen</h3>
+                    <div class="role">Sustainability Director</div>
+                    <p>Marcus ensures our sourcing practices meet the highest ethical and environmental standards.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sophia Rodriguez">
+                    </div>
+                    <h3>Sophia Rodriguez</h3>
+                    <div class="role">Head of Community Outreach</div>
+                    <p>Sophia builds relationships with our farming partners and leads our educational initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment Section -->
+    <section class="commitment">
+        <div class="container">
+            <div class="commitment-content">
+                <h2>Our Commitment to Excellence</h2>
+                <p>We measure our success not just by sales, but by our positive impact on people and the planet.</p>
+
+                <div class="commitment-stats">
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Organic Ingredients</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Partner Farms</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15K</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Years in Business</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PureEssence Herbal Oils</h3>
+                    <p>Pure herbal oils crafted with care for your wellness journey. Rooted in nature, bottled for you.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Products</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Care</h3>
+                    <ul>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Edappally, Cochin-21</li>
+                        <li><i class="fas fa-phone"></i> +91-9445500110</li>
+                        <li><i class="fas fa-envelope"></i> hello@pureessence.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 PureEssence Herbal Oils. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="{% static 'JS/about.js' %}"> </script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Booking Details - Pure Essence Oil</title>
+<style>
+  :root {
+    --primary-green: #2d5a3b;
+    --secondary-green: #4a7c59;
+    --light-green: #e8f5e9;
+    --accent-gold: #c8a951;
+    --text-dark: #2c3e2f;
+    --text-light: #5d7a63;
+    --border-light: #d1e7d4;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fdf8;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h1, h2, h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  h1:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background-color: var(--secondary-green);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-green);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 5px 15px rgba(45, 90, 59, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--white);
+  }
+
+  td {
+    width: 50%;
+    vertical-align: top;
+    padding: 25px;
+    border-right: 1px solid var(--border-light);
+  }
+
+  td:last-child {
+    border-right: none;
+  }
+
+  label {
+    font-weight: 600;
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input, select, textarea {
+    width: 90%;
+    padding: 12px;
+    margin-top: 4px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f9fffa;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary-green);
+    box-shadow: 0 0 0 2px rgba(74, 124, 89, 0.2);
+  }
+
+  button {
+    padding: 14px 30px;
+    cursor: pointer;
+    background: linear-gradient(to right, var(--primary-green), var(--secondary-green));
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(45, 90, 59, 0.2);
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(45, 90, 59, 0.3);
+    background: linear-gradient(to right, var(--secondary-green), var(--primary-green));
+  }
+
+  .product-info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .product-image {
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+
+  .product-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid var(--border-light);
+  }
+
+  .product-details {
+    flex-grow: 1;
+  }
+
+  .order-summary {
+    background-color: var(--light-green);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 4px solid var(--accent-gold);
+  }
+
+  .order-summary div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--border-light);
+  }
+
+  .order-summary div:last-child {
+    border-bottom: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-green);
+  }
+
+  .form-section {
+    margin-bottom: 25px;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    table, td {
+      display: block;
+      width: 100%;
+    }
+
+    td {
+      padding: 15px;
+      border-right: none;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .product-info {
+      flex-direction: column;
+    }
+
+    .product-image {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+    input, select, textarea {
+      width: 95%;
+    }
+  }
+    .back-btn {
+  display: inline-block;
+  background: linear-gradient(to right, var(--secondary-green), var(--primary-green));
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(45, 90, 59, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 18px;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(45, 90, 59, 0.3);
+  background: linear-gradient(to right, var(--primary-green), var(--secondary-green));
+}
+
+</style>
+</head>
+<body>
+
+<a href="{% url 'cust_dashboard' %}" class="back-btn">← Back to Dashboard</a>
+
+  <div class="container">
+    <h1>Booking Details</h1>
+
+    <form method="post" action="{% url 'booking_form' %}">
+    {% csrf_token %}
+    <!-- Hidden Product ID -->
+    <input type="hidden" name="product_id" value="{{ product.id }}">
+
+      <table>
+        <tr>
+          <!-- Left column -->
+          <td valign="top">
+            <h2>Product / Booking</h2>
+
+            <div class="product-info">
+              <div class="product-image">
+                {% if product.image %}
+                  <img src="{{ product.image.url }}" alt="{{ product.product_name }}">
+                {% endif %}
+              </div>
+              <div class="product-details">
+                <p><strong>Product Name:</strong> {{ product.product_name }}</p>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <label for="oilSize">Oil Size</label>
+              <select id="oilSize" name="oilSize">
+                <option value="250ml">250 ml</option>
+                <option value="500ml">500 ml</option>
+              </select>
+            </div>
+
+            <div class="form-section">
+              <label for="unitPrice">Price (per unit)</label>
+              <input id="unitPrice" name="unitPrice" type="number" step="0.01" value="{{ product.price }}" min="0">
+            </div>
+
+            <div class="form-section">
+              <label for="quantity">Quantity</label>
+              <input id="quantity" name="quantity" type="number" value="1" min="1">
+            </div>
+
+            <div class="form-section">
+              <label for="note">Special Note</label>
+              <textarea id="note" name="note" rows="4" placeholder="Any special requests or notes...">{{ saved_note }}</textarea>
+            </div>
+          </td>
+
+          <!-- Right column -->
+          <td valign="top">
+            <h2>Customer Details</h2>
+
+            <div class="form-section">
+              <label for="custName">Full name</label>
+              <input id="custName" name="custName" type="text" value="{{ user.first_name }}" readonly>
+            </div>
+
+            <div class="form-section">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" value="{{ user.email }}" readonly>
+            </div>
+
+            <div class="form-section">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" value="{{ saved_phone }}" required>
+            </div>
+
+            <div class="form-section">
+              <label for="alt_phone">Alternative Phone</label>
+              <input id="alt_phone" name="alt_phone" type="tel" value="{{save_alt_phone}}">
+            </div>
+
+            <div class="form-section">
+              <label for="address">Address</label>
+              <textarea id="address" name="address" rows="3" placeholder="Your complete shipping address...">{{ saved_address }}</textarea>
+            </div>
+
+            <h3>Order Summary</h3>
+            <div class="order-summary">
+              <div>Sub-total: <span id="subtotal">0.00</span></div>
+              <div>Tax (5%): <span id="tax">0.00</span></div>
+              <div>Total: <span id="total">0.00</span></div>
+            </div>
+
+            <button type="submit">Proceed to Payment</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <script>
+    const unitPrice = document.getElementById('unitPrice');
+    const qty = document.getElementById('quantity');
+    const subtotalEl = document.getElementById('subtotal');
+    const taxEl = document.getElementById('tax');
+    const totalEl = document.getElementById('total');
+
+    function calcTotals(){
+      const price = parseFloat(unitPrice.value) || 0;
+      const quantity = parseFloat(qty.value) || 0;
+      const subtotal = price * quantity;
+      const tax = subtotal * 0.05;
+      const total = subtotal + tax;
+
+      subtotalEl.textContent = subtotal.toFixed(2);
+      taxEl.textContent = tax.toFixed(2);
+      totalEl.textContent = total.toFixed(2);
+    }
+
+    unitPrice.addEventListener('input', calcTotals);
+    qty.addEventListener('input', calcTotals);
+
+    calcTotals();
+
+      document.querySelector("form").addEventListener("submit", function () {
+    const noteField = document.getElementById("note");
+    const custName = document.getElementById("custName")?.value || "";
+
+    if (noteField.value.trim() === "") {
+        noteField.value = `Booking by ${custName}`;
+    }
+});
+  </script>
+</body>
+</html>
